@@ -1,0 +1,59 @@
+.experience {
+  padding: 1rem 0;
+}
+
+.experienceWrapper {
+  /* background-color: var(--dark-purple);
+  background-image: linear-gradient(
+    315deg,
+    var(--dark-purple) 15%,
+    var(--light-blue) 85%
+  ); */
+  padding: 2rem;
+ }
+
+.column {
+  flex: 50%;
+  max-width: 50%;
+}
+.experience .frame {
+  border-radius: 1rem;
+  padding: 3px;
+  margin: 1.5rem 1rem 1.5rem;
+
+  background-color: var(--dark-purple);
+  background-image: linear-gradient(
+    315deg,
+    var(--light-blue) 15%,
+    var(--light-purple) 85%
+  ); 
+}
+
+.experience .frame .work {
+  padding: 1rem;
+  background-color: var(--dark-navey);
+  border-radius: 1rem;
+  box-shadow:-4px -4px 10px 0px var(--light-purple), 4px 4px 10px 0px var(--light-blue)
+}
+
+.experience h3 {
+  padding: 1rem 0 0 0;
+  color: #fff;
+}
+.jobTitle {
+  text-shadow: 2px 2px var(--light-purple);
+  font-style: italic;
+  font-weight: bold;
+}
+
+
+.date {
+  color: var(--light-blue);
+}
+
+p {
+  font-size: 1rem;
+  padding-top: 2rem;
+  line-height: 25px;
+  font-family: monospace;
+}

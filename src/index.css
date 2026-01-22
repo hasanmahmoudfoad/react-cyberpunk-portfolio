@@ -1,13 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch&display=swap');
+
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+:root {
+  --extra-light-blue: #93f8ff;
+  --extra-light-blue-trans: #00eeff80;
+  --light-blue: #00d9ff;
+  --light-blue-trans: #4fb6dc9f;
+  --light-green: #33c126;
+  --dark-navey: #101630;
+  --dark-navey-trans: #101630b2;
+  --light-purple: #ff13f0;
+  --light-purple-trans: #ff13efb7;
+  --dark-purple: #463fc2;
+  --dark-purple-trans: #463fc2ad;
+  --shopify: #95bf47;
+
+  /* Font Custom Properties */
+  --font-myriad: "Myriad Pro", sans-serif;
+  --font-aref: "Aref Ruqaa", serif;
+  --font-average: "Average Sans", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+    background-color: var(--dark-navey);
+    min-height: 100vh;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px 2px var(--light-blue);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--light-blue);
+}
+
+/* Glitch Effects */
+/* Glitch Effects */
+/* General Glitch Effect */
+.glitch {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(-0%, -0%);
+  margin: 0;
+  text-decoration: none;
+}
+
+/* Mirror the text dynamically via data-text */
+.glitch::before,
+.glitch::after {
+  display: block;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.glitch::after {
+  color: var(--light-purple);
+  z-index: -2;
+}
+
+.glitch::before {
+  color: var(--light-green);
+  z-index: -1;
+}
+
+/* Hover triggers the opposing animations */
+.glitch:hover::before {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
+
+.glitch:hover::after {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+}
+
+/* Glitch Effects */
+/* Glitch Effects */
+
+/*   FONT FAMILY UTILITY CLASSES  */
+
+.font-myriad {
+  font-family: var(--font-myriad);
+}
+
+/* Font Weight + Style Combinations */
+.font-myriad-light {
+  font-family: var(--font-myriad);
+  font-weight: 300;
+}
+
+.font-myriad-regular {
+  font-family: var(--font-myriad);
+  font-weight: normal;
+}
+
+.font-myriad-semibold {
+  font-family: var(--font-myriad);
+  font-weight: 600;
+}
+
+.font-myriad-bold {
+  font-family: var(--font-myriad);
+  font-weight: bold;
+}
+
+.font-myriad-semibold-italic {
+  font-family: var(--font-myriad);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.font-myriad-bold-italic {
+  font-family: var(--font-myriad);
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Old utility classes (kept for backwards compatibility) */
+
+.relative-div {
+  position: relative;
+}
+.overlay {
+  background-color: var(--extra-light-blue-trans);
+  width: 100%;
+}
+.light-blue {
+  color: var(--light-blue);
+}
+.clearfix {
+  clear: both;
+}
+.big-btn {
+  padding: 15px 25px;
+  text-align: center;
+  font-weight: 400;
+  background-color: var(--dark-purple);
+  background-image: linear-gradient(
+    315deg,
+    var(--dark-purple) 15%,
+    var(--light-blue) 85%
+  );
+  box-shadow: 0 4px 15px 0 var(--light-blue);
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  width: 33.333%;
+  max-width: 300px;
+  border: none;
+  background-size: 300% 100%;
+  -o-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  border-radius: 1rem;
+}
+
+.big-btn:hover {
+  box-shadow: 0 4px 15px 0 var(--dark-purple);
+  background-position: 100% 0;
+  -o-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.big-btn:focus {
+  outline: none;
+}
+
+.glow {
+  letter-spacing: 2px;
+  font-size: 3.5rem;
+  color: #fff;
+  animation: glow 10s ease-in-out infinite;
+}
+.flicker {
+  animation: flicker 1.5s infinite alternate; 
+}
+
+.shopify {
+  color: var(--shopify);
+  font-family: "Myriad Pro", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3rem;
+  color: #ddd;
+  font-style: normal;
+  font-family: "Inconsolata", monospace;
+}
+
+li, a{
+    color: #ddd;
+}
+
+.extraLargeHeadding{
+  font-size: 4.5rem;
+}
+
+.LargeHeadding{
+  font-size: 3.5rem;
+}
+
+.Headding{
+  font-size: 3rem;
+}
+
+.smallHeadding{
+  font-size: 2.5rem;
+}
+
+.highlight-box-light-blue {
+  box-shadow: 0 0px 0px 1px var(--light-blue);
+  padding-right: 4px;
+  padding-left: 4px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+.highlight-box-light-purple {
+  box-shadow: 0 0px 0px 1px var(--light-purple);
+  padding-right: 4px;
+  padding-left: 4px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+.underline-light-blue {
+  box-shadow: 0 1px 0 0 var(--light-blue);
+}
+.underline-light-purple {
+  box-shadow: 0 1px 0 0 var(--light-purple);
+}
+
+
+
+@keyframes glow {
+   0%,
+  100%  {
+    text-shadow:
+      0 0 1px #fff,
+      0 0 7px var(--light-purple),
+      0 0 7px var(--light-purple),
+      0 0 7px var(--light-purple),
+      0 0 7px var(--light-purple),
+      0 0 7px var(--light-purple);
+  }
+
+  50% {
+    text-shadow:
+      0 0 0px #fff,
+      0 0 7px var(--light-blue),
+      0 0 7px var(--light-blue),
+      0 0 7px var(--light-blue),
+      0 0 7px var(--light-blue),
+      0 0 7px var(--light-blue);
+  }
+}
+
+/* Flickering animation */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+      0 0 0px #ddd,
+      0 0 0px #ddd,
+      0 0 0px #ddd,
+      0 0 5px var(--extra-light-blue),
+      0 0 10px var(--extra-light-blue),
+      0 0 12px var(--extra-light-blue),
+      0 0 15px var(--extra-light-blue),
+      0 0 30px var(--extra-light-blue);
+  
+  }
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
+
+@keyframes glitch {
+  0%   { transform: translate(0); }
+  20%  { transform: translate(-3px,  3px); }
+  40%  { transform: translate(-3px, -3px); }
+  60%  { transform: translate( 3px,  3px); }
+  80%  { transform: translate( 3px, -3px); }
+  100% { transform: translate(0); }
+}
+
+
+
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("./assets/fonts/MYRIADPRO-BOLD.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("./assets/fonts/MYRIADPRO-BOLDCOND.woff") format("woff");
+  font-weight: bold;
+  font-style: normal; /* Or 'condensed', but this is not a standard style */
+}
+
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("./assets/fonts/MYRIADPRO-BOLDCONDIT.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("./assets/fonts/MYRIADPRO-BOLDIT.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("./assets/fonts/MYRIADPRO-COND.woff") format("woff");
+  font-weight: normal; /* Adjust weight as necessary */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("./assets/fonts/MYRIADPRO-CONDIT.woff") format("woff");
+  font-weight: normal; /* Adjust weight as necessary */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("./assets/fonts/MyriadPro-Light.woff") format("woff");
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("./assets/fonts/MYRIADPRO-REGULAR.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("./assets/fonts/MYRIADPRO-SEMIBOLD.woff") format("woff");
+  font-weight: 600; /* Semibold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("./assets/fonts/MYRIADPRO-SEMIBOLDIT.woff") format("woff");
+  font-weight: 600; /* Semibold */
+  font-style: italic;
+}
+
+/*   RESPONSIVE SCREENS FOT MOBILE PHONES AND TABLETS  */
+/*   RESPONSIVE SCREENS FOT MOBILE PHONES AND TABLETS  */
+/*   RESPONSIVE SCREENS FOT MOBILE PHONES AND TABLETS  */
+
+/* START BOOTSTRAP SM SCREENS  */
+@media (max-width: 767px) {
+  .about-me p {
+    width: 100%;
+  }
+
+  .big-btn {
+    font-size: 1.1rem;
+    width: 50%;
+  }
+  #go-top {
+    padding: 1rem;
+    width: 60px;
+    height: 60px;
+  }
+  p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  #projects .colored-container {
+    width: 100% !important;
+  }
+  #projects .colored-container .brand-logo {
+    max-width: 100px;
+  }
+  .experience .frame .work {
+    padding: 1rem;
+  }
+  .contact .info .icon-info span {
+    font-size: 1rem;
+  }
+}
+/* END BOOTSTRAP SM SCREENS  */
+
+/* START BOOTSTRAP MD SCREENS  */
+@media (max-width: 991px) {
+  .intro h1 {
+    font-size: 3rem !important;
+  }
+  .about-me p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 100%;
+  }
+  .about-me {
+    padding: 2rem 0;
+  }
+
+  .pv-sm {
+    padding: 5rem 0;
+  }
+
+  .pv-md {
+    padding: 5rem 0;
+  }
+
+  .pv-lg {
+    padding: 5rem 0;
+  }
+
+  #projects .project-row:nth-child(even) {
+    flex-direction: row;
+  }
+
+  #projects .project-row {
+    flex-direction: column-reverse !important;
+  }
+
+  #projects .go-to-btn {
+    padding: 0.7rem 1.3rem;
+    font-size: 1rem;
+    width: 100%;
+    margin: 0 !important;
+  }
+
+  #projects .info {
+    padding-top: 2rem;
+    align-items: center;
+  }
+  #projects .colored-container {
+    width: 70%;
+    margin: auto;
+  }
+  .ux .cutout {
+    padding: 0;
+  }
+  .ux h2 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  .glow {
+    font-size: 3rem;
+  }
+  .tech .prog-l {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+  .experience .row-container {
+    padding: 5rem 0;
+  }
+}
+/* END BOOTSTRAP MD SCREENS  */
+
+/* START CUSTOM  SCREENS  */
+@media (max-width: 1249px) {
+}
+
+@media (min-width: 1250px) {
+}
+/* END CUSTOM  SCREENS  */

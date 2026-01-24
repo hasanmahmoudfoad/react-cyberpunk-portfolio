@@ -13,32 +13,32 @@ const isActive = ({ isActive }) => {
 
   return (
     <>
-      <nav className="navbar  navbar-expand-lg ">
+      <nav className="navbar glow-box-blue-soft navbar-expand-lg ">
         <div className="container-fluid justify-content-center">
           <ul className="navbar-nav">
 
             <li className="nav-item">
-              <NavLink className="nav-link text-light" style={isActive} aria-current="page" to="/">
+              <NavLink className="nav-link text-light font-monospace" style={isActive} aria-current="page" to="/">
                 About Hasan
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link text-light" style={isActive} to="Projects">
+              <NavLink className="nav-link text-light font-monospace" style={isActive} to="Projects">
                 Projects
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link text-light" style={isActive} to="Education">
+              <NavLink className="nav-link text-light font-monospace" style={isActive} to="Education">
                 Education
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link text-light" style={isActive} to="Work">
+              <NavLink className="nav-link text-light font-monospace" style={isActive} to="Work">
                 Work Experience
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link text-light" style={isActive} to="BeyondWork">
+              <NavLink className="nav-link text-light font-monospace" style={isActive} to="BeyondWork">
                 Beyond Work
               </NavLink>
             </li>

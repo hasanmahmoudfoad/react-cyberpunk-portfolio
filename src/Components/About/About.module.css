@@ -17,7 +17,7 @@
 
 /* Left Section Styles */
 .leftSection {
-  padding-right: 2rem;
+  padding: 0 2rem 0;
 }
 
 .greeting {
@@ -33,10 +33,6 @@
 .glitchParent {
   height: 475px;
 }
-.highlight {
-  color: var(--light-blue);
-  text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
-}
 
 .subGreeting {
   font-size: 2.5rem;
@@ -46,27 +42,28 @@
 }
 
 .divider {
-  width: 300px;
-  height: 3px;
-  background: rgb(255, 195, 255);
-  margin: 2rem 0;
-  border-radius: 2px;
-    box-shadow:0px 0px 30px 10px var(--light-purple)
-
+  width: 250px;
+  height: 4px;
+  background: var(--purple-neon);
+  margin: 3rem 0 2rem 0;
+  box-shadow:
+    0px 0px 10px 2px var(--light-purple),
+    0px 0px 20px 5px var(--light-purple-trans),
+    0px 0px 30px 5px var(--light-purple-trans);
+  border-radius: 1rem;
 }
 
 .tagline {
   font-size: 1.5rem;
-  color: #a0a0c0;
-  margin-bottom: 2rem;
+  color: #ddd;
+  line-height: 35px;
   font-weight: 300;
-  letter-spacing: 0.5px;
 }
 
 .description {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #b0b0d0;
+  color: #ddd;
   margin-bottom: 2rem;
 }
 
@@ -79,8 +76,8 @@
 
 .skillTag {
   background: rgba(0, 217, 255, 0.1);
-  border: 1px solid rgba(0, 217, 255, 0.3);
-  color: #00d9ff;
+  border: 1px solid var(--extra-light-blue-trans);
+  color: var(--light-blue);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -91,7 +88,7 @@
 .skillTag:hover {
   background: rgba(0, 217, 255, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+  box-shadow: 0 0 15px var(--extra-light-blue-trans);
 }
 
 /* Right Section Styles */
@@ -109,7 +106,7 @@
   background: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   overflow: visible;
-  border: 2px solid transparent;
+  border: 2px solid var(--light-blue);
   background-clip: padding-box;
   box-shadow:
     0 0 40px rgba(0, 217, 255, 0.2),
@@ -142,7 +139,6 @@
     rgba(0, 217, 255, 0.05) 50%,
     transparent 100%
   );
-  animation: glow 4s ease-in-out infinite alternate;
 }
 
 .frameGrid {
@@ -171,34 +167,25 @@
   justify-content: center;
   overflow: visible;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  /* border: 1px solid blue; */
 }
 .profileImageWrapperAnimationLayer {
   height: 100%;
   max-height: 575px;
   width: 100%;
   overflow: hidden;
-  /* border: 1px solid red; */
 }
 
 .profileImage {
   width: 100%;
   height: auto;
-  max-height: 120%; /* Allow image to be taller */
+  max-height: 120%;
   object-fit: contain;
   filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.4));
-  animation: float 6s ease-in-out infinite;
   position: relative;
   top: -20px;
-  /* border: 1px solid #00ff00; */
   z-index: 3;
   transition: all 0.3s ease;
-  transform-origin: top center; /* Scale from top */
-}
-
-/* Glitch Effects */
-.glitchActive .profileImage {
-  animation: glitch 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  transform-origin: top center;
 }
 
 .glitchLayer {
@@ -217,32 +204,6 @@
   mix-blend-mode: screen;
 }
 
-.glitchLayer1 {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 0, 0, 0.3),
-    rgba(0, 255, 255, 0.3)
-  );
-}
-
-.glitchLayer2 {
-  background: linear-gradient(
-    90deg,
-    rgba(0, 255, 0, 0.3),
-    rgba(255, 0, 255, 0.3)
-  );
-}
-
-.glitchActive .glitchLayer1 {
-  animation: fastGlitch1 0.2s steps(1, end) infinite; /* FASTER! */
-
-}
-
-.glitchActive .glitchLayer2 {
-  animation: fastGlitch2 0.15s steps(1, end) infinite; /* EVEN FASTER! */
-
-}
-
 .imageGlow {
   position: absolute;
   width: 120%;
@@ -254,7 +215,6 @@
   );
   filter: blur(20px);
   z-index: 0;
-  animation: pulse 4s ease-in-out infinite;
   top: -10%;
   left: -10%;
 }
@@ -263,7 +223,7 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  border: 2px solid #00d9ff;
+  border: 1px solid var(--light-blue);
   opacity: 0.7;
 }
 
@@ -297,125 +257,6 @@
   border-left: none;
   border-top: none;
   border-bottom-right-radius: 1rem;
-}
-
-/* Animations */
-@keyframes borderGlow {
-  0%,
-  100% {
-    filter: blur(5px);
-    opacity: 0.8;
-  }
-  50% {
-    filter: blur(10px);
-    opacity: 1;
-  }
-}
-
-@keyframes glow {
-  from {
-    opacity: 0.5;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px); /* Increased float for more top emphasis */
-  }
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.05);
-  }
-}
-
-/* New Glitch Animations */
-@keyframes glitch {
-  0% {
-    transform: translate(0);
-    clip-path: inset(0 0 0 0);
-  }
-  10% {
-    transform: translate(-5px, 2px);
-    clip-path: inset(20% 0 60% 0);
-  }
-  20% {
-    transform: translate(5px, -2px);
-    clip-path: inset(40% 0 40% 0);
-  }
-  30% {
-    transform: translate(-3px, 1px);
-    clip-path: inset(60% 0 20% 0);
-  }
-  40% {
-    transform: translate(3px, -1px);
-    clip-path: inset(10% 0 80% 0);
-  }
-  50% {
-    transform: translate(-2px, 3px);
-    clip-path: inset(80% 0 10% 0);
-  }
-  60% {
-    transform: translate(2px, -3px);
-    clip-path: inset(0 0 0 0);
-  }
-  70% {
-    transform: translate(0);
-  }
-  80% {
-    filter: hue-rotate(90deg);
-  }
-  90% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    transform: translate(0);
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes fastGlitch1 {
-  0%, 100% {
-    transform: translate(0);
-    opacity: 0;
-  }
-  20%, 60% {  /* Reduced from 5 positions to 2 */
-    transform: translate(-8px, 4px);
-    opacity: 0.4;
-  }
-  40%, 80% {
-    transform: translate(8px, -4px);
-    opacity: 0.4;
-  }
-}
-
-@keyframes fastGlitch2 {
-  0%, 100% {
-    transform: translate(0);
-    opacity: 0;
-  }
-  25%, 75% {  /* Reduced from 5 positions to 2 */
-    transform: translate(6px, -6px);
-    opacity: 0.4;
-  }
-  50% {
-    transform: translate(-6px, 6px);
-    opacity: 0.4;
-  }
 }
 
 /* Optional: Hover effect for manual glitch trigger */

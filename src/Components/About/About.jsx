@@ -11,7 +11,7 @@ export default function About() {
       setIsGlitching(true);
       // Reset glitch after animation completes
       setTimeout(() => setIsGlitching(false), 1000);
-    }, 10000); // 10 seconds
+    }, 20000); // 10 seconds
 
     return () => clearInterval(glitchInterval);
   }, []);
@@ -23,23 +23,23 @@ export default function About() {
         <div className={styles.leftSection}>
           <div className={styles.textContent}>
             <div className="position-relative"></div>
-            <h1 className="ms-4">
-              <span className={`glow fw-normal LargeHeadding`}>Hi, I am</span>{" "}
-              <span className={`${styles.highlight} LargeHeadding`}>Hasan</span>
+            <h1 className="">
+              <span className={`font-neon text-blue-neon text-glow-blue extraLargeHeadding`}>Hi, I am</span>{" "}
+              <span className={`font-neon text-purple-neon text-glow-purple extraLargeHeadding`}>Hasan</span>
               <br />
-              <span className="shopify Headding">Shopify</span>{" "}
-              <span className={`glow fw-normal Headding`}>Developer</span>
+              <span className="font-shopify-bold-italic text-shopify Headding">Shopify</span>{" "}
+              <span className={`font-neon text-blue-neon text-glow-blue Headding`}>Developer</span>
             </h1>
 
             <div className={styles.divider}></div>
 
             <p className={styles.tagline}>
-              Shopify Developer | Delivering Tailored E-commerce Experiences
+             | Delivering Tailored E-commerce Experiences
             </p>
 
             <div className={styles.description}>
-              <p>
-                I specialize in creating custom Shopify solutions that drive
+              <p className="font-roboto">
+                I specialize in creating custom Shopify theme sections solutions that drive
                 conversions and enhance user experiences. From custom themes and
                 apps to performance optimization and seamless integrations, I
                 build e-commerce stores that not only look great but perform
@@ -73,24 +73,16 @@ export default function About() {
               {/* Image with top stick-out effect and glitch */}
               <div className={`${styles.profileImageWrapper}`}>
                 <div
-                  className={` ${styles.profileImageWrapperAnimationLayer} ${isGlitching ? styles.glitchActive : ""}`}
+                  className={` ${styles.profileImageWrapperAnimationLayer} ${isGlitching ? "glitch_ani" : ""}`}
                 >
                   <img
                     src={profileImage} // Replace with your image import
                     alt="Hasan - Shopify Developer"
-                    className={`${styles.profileImage} ${isGlitching ? styles.glitching : ""}`}
+                    className={`${styles.profileImage} float_ani ${isGlitching ? styles.glitching : ""}`}
                   />
-                  {/* Glitch layers */}
-
-                  {/* <div
-                    className={`${styles.glitchLayer} ${styles.glitchLayer2}`}
-                  ></div>                   */}
-                  {/* <div
-                    className={`${styles.glitchLayer} ${styles.glitchLayer1}`}
-                  ></div> */}
+    
                 </div>
-
-                <div className={styles.imageGlow}></div>
+                <div className={`pulse_ani ${styles.imageGlow}`}></div>
               </div>
 
               {/* Corner accents */}

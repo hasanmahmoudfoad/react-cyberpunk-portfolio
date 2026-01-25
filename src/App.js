@@ -8,6 +8,7 @@ import Projects from './Components/Projects/Projects';
 import Work from './Components/Work/Work';
 import BeyondWork from './Components/BeyondWork/BeyondWork';
 import NotFound from './Components/NotFound/NotFound';
+import { Toaster } from 'react-hot-toast';
 
 
 
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <div className="App">
+    <Toaster />
         <RouterProvider router={routers} />
     </div>
   );

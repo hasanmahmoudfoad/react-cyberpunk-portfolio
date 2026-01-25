@@ -77,6 +77,17 @@ li,
 a {
   color: #ddd;
 }
+
+.tag {
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid var(--extra-light-blue-trans);
+  color: var(--light-blue);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
 .extraLargeHeadding {
   font-size: 4.5rem;
 }
@@ -309,7 +320,9 @@ a {
 .underline-light-purple {
   box-shadow: 0 1px 0 0 var(--light-purple);
 }
-
+.cursorPointer {
+  cursor: pointer;
+}
 /*Other utility classes (kept for backwards compatibility) */
 /*Other utility classes (kept for backwards compatibility) */
 /*Other utility classes (kept for backwards compatibility) */

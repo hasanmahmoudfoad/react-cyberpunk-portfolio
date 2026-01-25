@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from "react";
 import styles from "./About.module.css";
-import profileImage from "../../assets/PersonalImages/PersonalStandingGrey.png";
+import { TypeAnimation } from "react-type-animation";
+
+import lookFrontProtrait from "../../assets/PersonalImages/lookFrontProtrait.png";
+import neonlookfrontPortrait from "../../assets/PersonalImages/personalNeonLookFront.png";
 
 export default function About() {
   const [isGlitching, setIsGlitching] = useState(false);
+
+  const copyMail = () => {
+    navigator.clipboard.writeText("hasanmahmoudfoad@gmail.com");
+  };
 
   // Trigger glitch effect every 10 seconds
   useEffect(() => {
@@ -18,52 +25,85 @@ export default function About() {
 
   return (
     <div className={`${styles.wrapper} container`}>
-      <div className={styles.content}>
+      <div className={`${styles.content}`}>
         {/* Left Section */}
         <div className={styles.leftSection}>
           <div className={styles.textContent}>
             <div className="position-relative"></div>
             <h1 className="">
-              <span className={`font-neon text-blue-neon text-glow-blue extraLargeHeadding`}>Hi, I am</span>{" "}
-              <span className={`font-neon text-purple-neon text-glow-purple extraLargeHeadding`}>Hasan</span>
+              <span
+                className={`font-neon text-blue-neon text-glow-blue extraLargeHeadding`}
+              >
+                Hi, I am
+              </span>{" "}
+              <span
+                className={`font-neon text-purple-neon text-glow-purple extraLargeHeadding`}
+              >
+                Hasan
+              </span>
               <br />
-              <span className="font-shopify-bold-italic text-shopify Headding">Shopify</span>{" "}
-              <span className={`font-neon text-blue-neon text-glow-blue Headding`}>Developer</span>
+              <span className="font-shopify-bold-italic text-shopify Headding">
+                Shopify
+              </span>{" "}
+              <span
+                className={`font-neon text-blue-neon text-glow-blue Headding`}
+              >
+                &lt;Developer /&gt;
+              </span>
             </h1>
 
             <div className={styles.divider}></div>
 
             <p className={styles.tagline}>
-             | Delivering Tailored E-commerce Experiences
+              | Delivering Tailored E-commerce Experiences
             </p>
 
             <div className={styles.description}>
-              <p className="font-roboto">
-                I specialize in creating custom Shopify theme sections solutions that drive
-                conversions and enhance user experiences. From custom themes and
-                apps to performance optimization and seamless integrations, I
-                build e-commerce stores that not only look great but perform
-                exceptionally.
-              </p>
-
-              <div className={styles.skills}>
-                <span className={styles.skillTag}>Html</span>
-                <span className={styles.skillTag}>Css</span>
-                <span className={styles.skillTag}>Bootstrap</span>
-                <span className={styles.skillTag}>JS</span>
-                <span className={styles.skillTag}>jQuery</span>
-                <span className={styles.skillTag}>Liquid</span>
-                <span className={styles.skillTag}>React</span>
-                <span className={styles.skillTag}>Shopify API</span>
-                <span className={styles.skillTag}>Custom Themes</span>
-                <span className={styles.skillTag}>Store Optimization</span>
+              <div className={styles.codeframeheader}>
+                <i className="fa-solid fa-minus ms-2 text-purple-neon text-glow-purple"></i>
+                <i className="fa-regular fa-window-restore ms-2 text-purple-neon text-glow-purple"></i>
+                <i className="fa-solid fa-xmark ms-2 text-purple-neon text-glow-purple"></i>
               </div>
+              <div className={styles.codeframegrid}>
+                <TypeAnimation
+                  sequence={[
+                    " Specialized in creating custom Shopify theme sections solutions that drive conversions and enhance user experiences.",
+                    2000,
+                    " Specialized in creating custom Shopify theme sections solutions that drive conversions and enhance user experiences.\nFrom custom themes and sections to performance optimization and seamless integrations.",
+                    2000,
+                    " Specialized in creating custom Shopify theme sections solutions that drive conversions and enhance user experiences.\nFrom custom themes and sections to performance optimization and seamless integrations.\nI build e-commerce stores that not only look great but perform exceptionally.",
+                    3000,
+                    " Specialized in creating custom Shopify theme sections solutions that drive conversions and enhance user experiences.\nFrom custom themes and sections to performance optimization and seamless integrations.\nI build e-commerce stores that not only look great but perform exceptionally.\nThats it :).",
+                  ]}
+                  wrapper="p"
+                  speed={75}
+                  cursor={true}
+                  style={{
+                    whiteSpace: "pre-line",
+                    fontSize: "1rem",
+                    color: "#ddd",
+                  }}
+                  className={`p-2 m-0 font-monospace ${styles.typeAnimation} text-blue-neon`}
+                />
+              </div>
+            </div>
+            <div className={styles.tagsWrapper}>
+              <span className="tag">Html</span>
+              <span className="tag">Css</span>
+              <span className="tag">Bootstrap</span>
+              <span className="tag">JS</span>
+              <span className="tag">jQuery</span>
+              <span className="tag">Liquid</span>
+              <span className="tag">React</span>
+              <span className="tag">Shopify API</span>
+              <span className="tag">Custom Themes</span>
+              <span className="tag">Store Optimization</span>
             </div>
           </div>
         </div>
 
         {/* Right Section */}
-        <div className={styles.rightSection}>
+        <div className={` flex-column ${styles.rightSection}`}>
           <div className={styles.imageContainer}>
             {/* Cyberpunk frame */}
             <div className={styles.cyberpunkFrame}>
@@ -76,24 +116,69 @@ export default function About() {
                   className={` ${styles.profileImageWrapperAnimationLayer} ${isGlitching ? "glitch_ani" : ""}`}
                 >
                   <img
-                    src={profileImage} // Replace with your image import
+                    src={lookFrontProtrait}
                     alt="Hasan - Shopify Developer"
-                    className={`${styles.profileImage} float_ani ${isGlitching ? styles.glitching : ""}`}
+                    className={`${styles.profileImage} ${styles.primaryImg} float_ani ${isGlitching ? styles.glitching : ""}`}
                   />
-    
+                  <img
+                    src={neonlookfrontPortrait}
+                    alt="Hasan - Shopify Developer Hover"
+                    className={`${styles.profileImage} ${styles.secondaryImg} float_ani`}
+                  />
                 </div>
                 <div className={`pulse_ani ${styles.imageGlow}`}></div>
               </div>
 
-              {/* Corner accents */}
               <div className={`${styles.corner} ${styles.cornerTL}`}></div>
               <div className={`${styles.corner} ${styles.cornerTR}`}></div>
               <div className={`${styles.corner} ${styles.cornerBL}`}></div>
               <div className={`${styles.corner} ${styles.cornerBR}`}></div>
-
-              {/* Cyberpunk scan line effect */}
-              <div className={styles.scanLine}></div>
             </div>
+          </div>
+          <div
+            className={` mt-3 p-3 position-relative ${styles.contactCyberpunkFrame}`}
+          >
+            {/* <div className={styles.frameGlow}></div> */}
+            {/* <div className={styles.frameGrid}></div> */}
+            <div className="p-2">
+              <i className="fa-solid fa-location-dot me-3 text-purple-neon text-glow-purple"></i>
+              <span className="font-monospace">Cairo, Egypt</span>
+            </div>
+            <div className="p-2">
+              <i className="fa-solid fa-phone me-3 text-purple-neon text-glow-purple"></i>
+              <span className="font-monospace">+20 115 338 0655</span>
+            </div>
+            <div className="p-2">
+              <i class="fa-solid fa-envelope me-3 text-purple-neon text-glow-purple"></i>
+              <span className="font-monospace">hassanmahmoudfoad@gmail.com</span> <span className="ms-3">
+              <i className="fa-regular text-light-blue fa-copy cursorPointer" onClick={()=> copyMail()} ></i></span>
+            </div>
+          </div>
+          <div className={styles.tagsWrapper}>
+            <a
+              href="www.linkedin.com/in/hasan-mahmoud-483366170"
+              className={`text-decoration-none tag ${styles.accountTags}`}
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://www.upwork.com/freelancers/~01570309eb9d8f76c5?mp_source=share"
+              className={`text-decoration-none tag ${styles.accountTags}`}
+            >
+              UpWork
+            </a>
+            <a
+              href="https://github.com/hasanmahmoudfoad"
+              className={`text-decoration-none tag ${styles.accountTags}`}
+            >
+              GitHub
+            </a>
+            <a
+              href="https://wuzzuf.net/me/Hassan-Mahmood-e69e93ee16"
+              className={`text-decoration-none tag ${styles.accountTags}`}
+            >
+              Wuzzuf
+            </a>
           </div>
         </div>
       </div>

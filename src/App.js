@@ -7,6 +7,7 @@ import Education from './Components/Education/Education';
 import Projects from './Components/Projects/Projects';
 import Work from './Components/Work/Work';
 import BeyondWork from './Components/BeyondWork/BeyondWork';
+import ProjectsGrid from './Components/ProjectsGrid/ProjectsGrid';
 import NotFound from './Components/NotFound/NotFound';
 import { Toaster } from 'react-hot-toast';
 
@@ -20,7 +21,7 @@ function App() {
           { path: 'Education', element: <ProtectedRoute><Education /></ProtectedRoute> },
           { path: 'Projects', element: <ProtectedRoute><Projects /></ProtectedRoute> },
           { path: 'Work', element: <ProtectedRoute><Work /></ProtectedRoute>},
-          { path: 'BeyondWork', element: <ProtectedRoute><BeyondWork /></ProtectedRoute>},
+          { path: 'ProjectsGrid', element: <ProtectedRoute><ProjectsGrid /></ProtectedRoute>},
           { path: "*", element: <NotFound /> },
         ]
       }

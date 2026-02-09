@@ -4,6 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 import toast, { Toaster } from "react-hot-toast";
 import lookFrontProtrait from "../../assets/PersonalImages/lookFrontProtrait.png";
 import neonlookfrontPortrait from "../../assets/PersonalImages/personalNeonLookFront.png";
+import TvGlitch from "../../assets/images/AV_tvGlitch_1.gif"
 
 export default function About() {
   const [isGlitching, setIsGlitching] = useState(false);
@@ -41,35 +42,35 @@ export default function About() {
       <div className={`${styles.content}`}>
         {/* Left Section */}
         <div className={styles.leftSection}>
-          <div className={styles.textContent}>
+          <div className="mb-4 mb-lg-0">
             <div className="position-relative"></div>
-            <h1 className="">
+            <h1 className="d-none d-lg-block">
               <span
-                className={`font-neon text-blue-neon text-glow-blue extraLargeHeadding`}
+                className={`font-orbitron text-blue-neon text-glow-blue headding-3`}
               >
-                Hi, I am
+                Hi, I am Hasan
               </span>{" "}
               <span
-                className={`font-neon text-purple-neon text-glow-purple extraLargeHeadding`}
+                className={`font-orbitron text-purple-neon text-glow-purple headding-3`}
               >
-                Hasan
+               
               </span>
               <br />
-              <span className="font-shopify-bold-italic text-shopify Headding">
+              <span className="font-shopify-bold-italic shopify-hover text-purple-neon text-glow-purple headding-2">
                 Shopify
               </span>{" "}
               <span
-                className={`font-neon text-blue-neon text-glow-blue Headding`}
+                className={`font-orbitron text-blue-neon text-glow-blue headding-3`}
               >
-                &lt;Developer /&gt;
+                Developer 
               </span>
             </h1>
 
             <div className={styles.divider}></div>
 
-            <p className={styles.tagline}>
+            {/* <p className={styles.tagline}>
               | Delivering Tailored E-commerce Experiences
-            </p>
+            </p> */}
 
             <div className={styles.description}>
               <div className={styles.codeframeheader}>
@@ -96,7 +97,7 @@ export default function About() {
                     fontSize: "1rem",
                     color: "#ddd",
                   }}
-                  className={`p-2 m-0 font-monospace ${styles.typeAnimation} text-blue-neon`}
+                  className={`p-3 m-0 font-monospace ${styles.typeAnimation} text-blue-neon`}
                 />
               </div>
             </div>
@@ -120,18 +121,21 @@ export default function About() {
           <div className={styles.imageContainer}>
             {/* Cyberpunk frame */}
             <div className={styles.cyberpunkFrame}>
+              <img src={TvGlitch} className={`${styles.tvGlitchImg} z-5 img-fluid h-100 w-100`} />
+
               <div className={styles.frameGlow}></div>
               <div className={styles.frameGrid}></div>
 
               {/* Image with top stick-out effect and glitch */}
               <div className={`${styles.profileImageWrapper}`}>
+
                 <div
                   className={` ${styles.profileImageWrapperAnimationLayer} ${isGlitching ? "glitch_ani" : ""}`}
                 >
                   <img
                     src={lookFrontProtrait}
                     alt="Hasan - Shopify Developer"
-                    className={`${styles.profileImage} ${styles.primaryImg} float_ani ${isGlitching ? styles.glitching : ""}`}
+                    className={`${styles.profileImage} ${styles.primaryImg} float_ani  ${isGlitching ? styles.glitching : ""}`}
                   />
                   <img
                     src={neonlookfrontPortrait}
@@ -148,20 +152,42 @@ export default function About() {
               <div className={`${styles.corner} ${styles.cornerBR}`}></div>
             </div>
           </div>
+           <h1 className="d-block d-lg-none my-4 my-md-5">
+              <span
+                className={`font-orbitron text-blue-neon text-glow-blue headding-3`}
+              >
+                Hi, I am Hasan
+              </span>{" "}
+              <span
+                className={`font-orbitron text-purple-neon text-glow-purple headding-3`}
+              >
+               
+              </span>
+              <br />
+              <span className="font-shopify-bold-italic shopify-hover text-purple-neon text-glow-purple headding-2">
+                Shopify
+              </span>{" "}
+              <span
+                className={`font-orbitron text-blue-neon text-glow-blue headding-3`}
+              >
+                Developer 
+              </span>
+            </h1>
+
           <div
             className={` mt-3 p-3 position-relative ${styles.contactCyberpunkFrame}`}
           >
             <div className="z-2 position-relative">
-              <div className="p-2">
+              <div className="py-sm-1 py-lg-2 py-md-2 ">
                 <i className="fa-solid fa-location-dot me-3 text-purple-neon text-glow-purple"></i>
                 <span className="font-monospace">Cairo, Egypt</span>
               </div>
-              <div className="p-2">
+              <div className="py-sm-1 py-lg-2 py-md-2 ">
                 <i className="fa-solid fa-phone me-3 text-purple-neon text-glow-purple"></i>
                 <span className="font-monospace">+20 115 338 0655</span>
               </div>
-              <div className="p-2">
-                <i class="fa-solid fa-envelope me-3 text-purple-neon text-glow-purple"></i>
+              <div className="py-sm-1 py-lg-2 py-md-2 ">
+                <i className="fa-solid fa-envelope me-3 text-purple-neon text-glow-purple"></i>
                 <span className="font-monospace">
                   hassanmahmoudfoad@gmail.com
                 </span>
@@ -179,26 +205,30 @@ export default function About() {
           </div>
           <div className={styles.tagsWrapper}>
             <a
-              href="www.linkedin.com/in/hasan-mahmoud-483366170"
+              href="https://linkedin.com/in/hasan-mahmoud-483366170"
               className={`text-decoration-none tag ${styles.accountTags}`}
+               target="_blank"
             >
               LinkedIn
             </a>
             <a
               href="https://www.upwork.com/freelancers/~01570309eb9d8f76c5?mp_source=share"
               className={`text-decoration-none tag ${styles.accountTags}`}
+               target="_blank"
             >
               UpWork
             </a>
             <a
               href="https://github.com/hasanmahmoudfoad"
               className={`text-decoration-none tag ${styles.accountTags}`}
+               target="_blank"
             >
               GitHub
             </a>
             <a
               href="https://wuzzuf.net/me/Hassan-Mahmood-e69e93ee16"
               className={`text-decoration-none tag ${styles.accountTags}`}
+               target="_blank"
             >
               Wuzzuf
             </a>

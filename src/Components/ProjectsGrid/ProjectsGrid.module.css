@@ -1,0 +1,109 @@
+.projectWrapper {
+  min-height: 285px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+  overflow: visible;
+  border: 2px solid var(--light-blue);
+  background-clip: padding-box;
+  box-shadow:
+    0 0 40px rgba(0, 217, 255, 0.2),
+    inset 0 0 40px rgba(0, 217, 255, 0.1);
+  position: relative;
+  transition-duration: 0.25s;
+}
+.projectTitle {
+  transition-duration: 0.25s;
+}
+.projectDiscription {
+}
+.projectWrapper:hover {
+  box-shadow:
+    0 0 40px #ff00ee80,
+    0 0 40px #ff00ee3d,
+    inset 0 0 40px #ff13ef4d;
+  border: 2px solid var(--light-purple);
+}
+
+/* .projectWrapper:hover h3 {
+  color: var(--purple-neon);
+  animation: cyberGlitch 1s infinite;
+} */
+.projectWrapper:hover .projectDiscription {
+  /* color: var(--light-purple); */
+}
+.projectWrapper:hover .shopifyOriginal {
+  opacity: 0;
+}
+.projectWrapper:hover .shopifyNeon2 {
+  opacity: 1;
+}
+.projectWrapper:hover .shopifyLogo {
+  border: 3px solid var(--light-purple);
+  box-shadow:
+    0 0 40px #ff00ee80,
+    0 0 40px #ff00ee3d,
+    inset 0 0 40px #ff13ef4d;
+}
+.projectWrapper:hover .projectLogo {
+  border: 1px solid var(--light-purple);
+}
+.projectWrapper:hover .projectVideo {
+  opacity: 1;
+}
+
+.codeframegrid {
+  min-height: 285px;
+  background-image:
+    linear-gradient(rgba(0, 217, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 217, 255, 0.05) 1px, transparent 1px);
+  background-size: 10px 10px;
+  border-radius: 0 !important;
+}
+.shopifyLogo {
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+  /* border-radius: 50%; */
+  position: absolute;
+  right: -5%;
+  top: -10%;
+  border: 3px solid var(--light-blue);
+  box-shadow:
+    0 0 40px rgba(0, 217, 255, 0.2),
+    inset 0 0 40px rgba(0, 217, 255, 0.1);
+  transition-duration: 0.25s;
+}
+.shopifyOriginal {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  transition-duration: 1s;
+}
+.shopifyNeon2 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+}
+.projectLogo {
+  max-width: 85px;
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  border: 1px solid var(--light-blue);
+  max-height: 85px;
+  background: #fff;
+  margin: 0 1rem 0 0;
+  overflow: hidden;
+  transition-duration: 0.25s;
+}
+.projectVideo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition-duration: 0.25s;
+}
+
+

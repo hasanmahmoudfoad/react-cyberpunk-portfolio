@@ -1,0 +1,28 @@
+nav{
+    max-width: 991px;
+    margin: auto;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 4px solid var(--light-blue);
+    border-top: none;
+}
+nav ul{
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+}
+
+nav ul li{
+ transition-duration: 0.25s;
+ min-width: 175px;
+ text-align: center;
+}
+
+
+nav ul li:hover{
+    text-shadow:4px 4px 0 var(--extra-light-blue), 0 0 1rem var(--extra-light-blue);
+    font-weight: 600;
+
+}
+
+

@@ -1,0 +1,211 @@
+/* Neon Title */
+.neonTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  font-family: monospace;
+}
+
+.neonTitle .text {
+  position: relative;
+}
+
+.neonTitle .text h1 {
+  font-size: 90px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: transparent;
+  text-shadow: 0 0 25px #00bcd4;
+  -webkit-text-stroke: 2px #00bcd4;
+}
+
+.neonTitle .text h1:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #00bcd4;
+  animation: waveTitle 3s ease-in-out infinite;
+}
+
+@keyframes waveTitle {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 51%,
+      13% 48%,
+      26% 50%,
+      37% 53%,
+      50% 55%,
+      61% 58%,
+      76% 60%,
+      91% 59%,
+      100% 51%,
+      100% 100%,
+      0 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0 51%,
+      9% 57%,
+      21% 62%,
+      36% 63%,
+      49% 57%,
+      60% 50%,
+      75% 46%,
+      91% 44%,
+      100% 42%,
+      100% 100%,
+      0 100%
+    );
+  }
+}
+.fadeDivider {
+  height: 1px;
+  width: 60%;
+  margin: 0 0 0 1rem;
+  border-radius: 0;
+  background: linear-gradient(90deg, var(--light-blue), transparent);
+  display: block;
+}
+
+.experience {
+  padding: 1rem 0;
+}
+
+.experienceWrapper {
+  padding: 2rem;
+}
+
+.column {
+  flex: 50%;
+  max-width: 50%;
+}
+.frame {
+  border-radius: 0;
+  padding: 3px;
+  margin: 1.5rem 1rem 1.5rem;
+  background: var(--dark-navey);
+  color: #fff;
+  position: relative;
+  /* border: 2px solid;
+  border-color: var(--light-purple-trans) var(--light-blue-trans); */
+
+  border-bottom: 2px solid var(--light-purple-trans);
+  border-left: 2px solid var(--light-purple-trans);
+  border-top: 2px solid var(--light-blue-trans);
+  border-right: 2px solid var(--light-blue-trans);
+}
+
+.project {
+  padding: 1rem;
+  border-radius: 0;
+  height: 300px;
+  overflow: hidden;
+}
+
+.projectTitle {
+  position: relative;
+  z-index: 3;
+}
+
+.projectBgImgWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  /* z-index: -1; */
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.projectBgImg {
+}
+.projectBgImgWrapperShade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background: #000000c7;
+}
+
+/* ------------------------------------- */
+.vSlider {
+  width: 100%;
+  display: flex;
+  align-items: center; /* THIS helps a lot */
+  height: 100%;
+}
+.vSlider :global(.swiper-wrapper) {
+  width: 90%;
+  margin: auto;
+}
+
+.vSliderContainer {
+  height: calc(100vh - 350px);
+
+  position: relative;
+}
+
+.vSwiperPagination {
+  /* display: block; */
+  display: flex;
+  justify-content: center;
+  margin: 1rem 2px;
+}
+.nextButton,
+.prevButton {
+  border: 2px solid var(--light-blue);
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+  background: var(--dark-navey);
+  transition-duration: 0.25s;
+}
+.nextButton:hover,
+.prevButton:hover {
+  background: rgba(0, 217, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+}
+
+.nextButton {
+  top: 50%;
+  right: -4%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prevButton {
+  top: 50%;
+  left: -4%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectLogo {
+  max-width: 180px;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  border: 1px solid red;
+  border-radius: 0;
+  max-height: 130px;
+  background: #fff;
+  margin: 0 1rem 0 0 ;
+}
+@media (max-width: 992px) {
+  .nextButton,
+  .prevButton {
+    display: none;
+  }
+}
